@@ -3,25 +3,30 @@ package main
 import "fmt"
 
 func main() {
-	// 1. Using the short declaration operator `:=`
-	name := "Shivam"
-	age := 25
-	isLearning := true
-	score := 95.5
+	// 1. Declaring a Constant
+	const Pi = 3.14159
 
-	// 2. Using the `var` keyword
-	var location string = "Banda, Uttar Pradesh"
+	fmt.Printf("The value of Pi is always: %v\n", Pi)
+	fmt.Println("---------------------------------")
 
-	// Let's print these values to the console
-	fmt.Println("--- My Information ---")
+	// 2. Arithmetic Operations with Integers
+	a := 20
+	b := 10
 
-	// fmt.Printf allows for formatted printing.
-	// %v is a placeholder for the value.
-	// %T is a placeholder for the type.
-	// \n creates a new line.
-	fmt.Printf("Name: %v, Type: %T\n", name, name)
-	fmt.Printf("Age: %v, Type: %T\n", age, age)
-	fmt.Printf("Location: %v, Type: %T\n", location, location)
-	fmt.Printf("Currently Learning Go? %v, Type: %T\n", isLearning, isLearning)
-	fmt.Printf("Score: %v, Type: %T\n", score, score)
+	fmt.Println("--- Integer Operations ---")
+	fmt.Printf("%v + %v = %v\n", a, b, a+b) // Addition
+	fmt.Printf("%v - %v = %v\n", a, b, a-b) // Subtraction
+	fmt.Printf("%v * %v = %v\n", a, b, a*b) // Multiplication
+	fmt.Printf("%v / %v = %v\n", a, b, a/b) // Division
+	fmt.Println("---------------------------------")
+
+	// 3. String Concatenation
+	firstName := "Shivam"
+	lastName := "Omer"
+
+	// We can join strings with the '+' operator
+	fullName := firstName + " " + lastName
+
+	fmt.Println("--- String Operations ---")
+	fmt.Printf("Full Name: %v\n", fullName)
 }
