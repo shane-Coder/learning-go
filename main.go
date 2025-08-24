@@ -1,32 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 func main() {
-	// 1. Declaring a Constant
-	const Pi = 3.14159
+	// --- Numeric Conversion ---
+	myInteger := 42
+	myFloat := 3.14
 
-	fmt.Printf("The value of Pi is always: %v\n", Pi)
+	// This would cause an error: invalid operation: myInteger + myFloat (mismatched types int and float64)
+	// fmt.Println(myInteger + myFloat)
+
+	// The CORRECT way: Convert the integer to a float64
+	sum := float64(myInteger) + myFloat
+
+	fmt.Println("--- Numeric Conversion ---")
+	fmt.Printf("The sum is: %v, Type: %T\n", sum, sum)
 	fmt.Println("---------------------------------")
 
-	// 2. Arithmetic Operations with Integers
-	a := 20
-	b := 10
+	// --- String Conversion ---
+	age := 25
 
-	fmt.Println("--- Integer Operations ---")
-	fmt.Printf("%v + %v = %v\n", a, b, a+b) // Addition
-	fmt.Printf("%v - %v = %v\n", a, b, a-b) // Subtraction
-	fmt.Printf("%v * %v = %v\n", a, b, a*b) // Multiplication
-	fmt.Printf("%v / %v = %v\n", a, b, a/b) // Division
-	fmt.Println("---------------------------------")
+	// We use strconv.Itoa() to convert the integer 'age' to a string
+	ageAsString := strconv.Itoa(age)
 
-	// 3. String Concatenation
-	firstName := "Shivam"
-	lastName := "Omer"
+	welcomeMessage := "My age is: " + ageAsString
 
-	// We can join strings with the '+' operator
-	fullName := firstName + " " + lastName
-
-	fmt.Println("--- String Operations ---")
-	fmt.Printf("Full Name: %v\n", fullName)
+	fmt.Println("--- String Conversion ---")
+	fmt.Printf("The welcome message is: \"%v\"\n", welcomeMessage)
+	fmt.Printf("Type of 'age' is %T, but type of 'ageAsString' is %T\n", age, ageAsString)
 }
