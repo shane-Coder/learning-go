@@ -1,24 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func main() {
-	myInt := 100
-	myFloat := 99.52873
+	// Let's check if someone is old enough to vote.
+	age := 17
 
-	// --- CORRECT way for Integers ---
-	intAsString := strconv.Itoa(myInt)
-	fmt.Printf("Integer %v is a %T, converted to \"%v\" which is a %T\n", myInt, myInt, intAsString, intAsString)
+	fmt.Printf("Checking voting eligibility for age: %v\n", age)
 
-	// --- INCORRECT way for Floats ---
-	// This line will cause a compile error: cannot use myFloat (variable of type float64) as int value in argument to strconv.Itoa
-	// floatAsString_WRONG := strconv.Itoa(myFloat)
+	// The 'if' statement checks the condition.
+	if age >= 18 {
+		// This block only runs if age is 18 or greater.
+		fmt.Println("Result: You are eligible to vote!")
+	} else {
+		// This block only runs if age is less than 18.
+		fmt.Println("Result: You are not eligible to vote yet.")
+	}
 
-	// --- CORRECT way for Floats ---
-	// We convert 99.5 to a string, keeping 2 decimal places of precision.
-	floatAsString_RIGHT := strconv.FormatFloat(myFloat, 'f', 2, 64)
-	fmt.Printf("Float %v is a %T, converted to \"%v\" which is a %T\n", myFloat, myFloat, floatAsString_RIGHT, floatAsString_RIGHT)
+	fmt.Println("---------------------------------")
+	fmt.Println("The program has finished checking.")
 }
