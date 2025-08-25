@@ -23,6 +23,21 @@ Rules/Logic:
 			AND the destinationZone is "Domestic", add a $5 express surcharge.
 
 			AND the destinationZone is "International", add a $15 express surcharge.
+
+---
+Terminal Output:
+
+	// Test Case 1: Domestic, standard weight, no priority
+	DestinationZone: Domestic, PackageWeight: 15, IsPriority: false
+	The total shipping cost is: $10.00
+
+	// Test Case 2: International, heavy weight, with priority
+	DestinationZone: International, PackageWeight: 45, IsPriority: true
+	The total shipping cost is: $50.00
+
+	// Test Case 3: Default zone, heavy weight
+	DestinationZone: Space, PackageWeight: 65, IsPriority: false
+	The total shipping cost is: $60.00
 */
 
 package main
