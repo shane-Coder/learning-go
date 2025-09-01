@@ -25,6 +25,11 @@ Rules/Logic:
 	5. In your main function, create instances of CreditCard and PayPal, and pass both of them to your generic getProcessingFee function to show that it works with both types.
 
 ---Terminal Output---
+	// Testcase 1: Credit Card
+	// Processing a ₹111.11 payment via Credit Card. Fee: ₹3.33
+
+	// Testcase 2: PayPal
+	// Processing a ₹111.11 payment via PayPal. Fee: ₹4.00
 */
 
 package main
