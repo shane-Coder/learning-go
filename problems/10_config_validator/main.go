@@ -33,67 +33,90 @@ package main
 
 import "fmt"
 
+// Improvement: Define constants for magic strings
+const (
+	EnvDevelopment = "development"
+	EnvStaging     = "staging"
+	EnvProduction  = "production"
+)
+
 type ConfigError struct {
 	Field  string
 	Reason string
 }
 
 func (e *ConfigError) Error() string {
-	return fmt.Sprintf("Configuration error : Field %s %s", e.Field, e.Reason)
+	// Improvement: Use single quotes for clarity
+	return fmt.Sprintf("Configuration Error: Field '%s' %s", e.Field, e.Reason)
 }
 
 func validateConfig(config map[string]string) error {
 	if _, ok := config["PORT"]; !ok {
-		return &ConfigError{Field: "PORT", Reason: "key is missing in config map"}
+		return &ConfigError{Field: "PORT", Reason: "is missing"}
 	}
-	if _, ok := config["ENV"]; !ok {
-		return &ConfigError{Field: "ENV", Reason: "key is missing in config map"}
+
+	// Improvement: More efficient check
+	env, ok := config["ENV"]
+	if !ok {
+		return &ConfigError{Field: "ENV", Reason: "is missing"}
 	}
-	if val, ok := config["ENV"]; ok {
-		if val != "development" && val != "staging" && val != "production" {
-			return &ConfigError{Field: "ENV", Reason: "values are not matching in ENV key in config map"}
-		}
+
+	// Check the value against our constants
+	switch env {
+	case EnvDevelopment, EnvStaging, EnvProduction:
+		// Valid case, do nothing.
+	default:
+		// Invalid case.
+		return &ConfigError{Field: "ENV", Reason: fmt.Sprintf("has an invalid value: '%s'", env)}
 	}
+
 	return nil
 }
 
 func main() {
-	fmt.Println("code logic here")
-	// Test Case 1: A valid config map
-	fmt.Println("--- Testing Valid Config ---")
-	validConfig := map[string]string{
-		"PORT": "8080",
-		"ENV":  "production",
-	}
-	err := validateConfig(validConfig)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("Config is valid.")
+	fmt.Println("--- Validating Configurations ---")
+
+	// Improvement: Use a table-driven test structure
+	testCases := []struct {
+		name   string // A name for the test case
+		config map[string]string
+	}{
+		{
+			name: "Valid Config",
+			config: map[string]string{
+				"PORT": "8080",
+				"ENV":  EnvProduction,
+			},
+		},
+		{
+			name: "Missing PORT Key",
+			config: map[string]string{
+				"ENV": EnvDevelopment,
+			},
+		},
+		{
+			name: "Invalid ENV Value",
+			config: map[string]string{
+				"PORT": "3000",
+				"ENV":  "testing",
+			},
+		},
+		{
+			name: "Missing ENV Key",
+			config: map[string]string{
+				"PORT": "9000",
+			},
+		},
 	}
 
-	// Test Case 2: A map with a missing key
-	fmt.Println("\n--- Testing Missing Key ---")
-	missingKeyConfig := map[string]string{
-		"ENV": "development",
-	}
-	err = validateConfig(missingKeyConfig)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("Config is valid.")
-	}
-
-	// Test Case 3: A map with an invalid value
-	fmt.Println("\n--- Testing Invalid Value ---")
-	invalidValueConfig := map[string]string{
-		"PORT": "8080",
-		"ENV":  "testing",
-	}
-	err = validateConfig(invalidValueConfig)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("Config is valid.")
+	// Loop over the test cases
+	for _, tc := range testCases {
+		fmt.Printf("\nRunning Test: '%s'\n", tc.name)
+		err := validateConfig(tc.config)
+		if err != nil {
+			fmt.Printf("Result: FAILED - %v\n", err)
+		} else {
+			fmt.Println("Result: PASSED - Config is valid.")
+		}
 	}
 }
