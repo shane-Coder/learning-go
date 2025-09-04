@@ -1,0 +1,3 @@
+Hello from Go!
+This is a new line.
+End of the file.
