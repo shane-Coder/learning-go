@@ -21,13 +21,13 @@ These are the core building blocks of the language that we have successfully cov
 
 ---
 
-## ⏳ Phase 2: Intermediate Go (In Progress)
+## ⏳ Phase 2: Intermediate Go (Completed)
 
 These topics are essential for building robust, real-world applications.
 
 - [x] **Error Handling**
 - [x] **Packages and Modules**
-- [ ] **File I/O**: Reading from and writing to files.
+- [x] **File I/O**: Reading from and writing to files.
 
 ---
 
