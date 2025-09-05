@@ -31,13 +31,13 @@ These topics are essential for building robust, real-world applications.
 
 ---
 
-## 🚀 Phase 3: Advanced Go & Concurrency (Upcoming)
+## 🚀 Phase 3: Advanced Go & Concurrency (In Progress)
 
 This phase will cover Go's most famous and powerful features.
 
-- [ ] **Concurrency**:
-    - [ ] **Goroutines**
-    - [ ] **Channels**
+- [x] **Concurrency**:
+    - [x] **Goroutines**
+    - [x] **Channels**
     - [ ] **Mutex**
 - [ ] **Standard Library Deep Dive**
 - [ ] **Testing**
