@@ -38,6 +38,6 @@ This phase will cover Go's most famous and powerful features.
 - [x] **Concurrency**:
     - [x] **Goroutines**
     - [x] **Channels**
-    - [ ] **Mutex**
+    - [x] **Mutex**
 - [ ] **Standard Library Deep Dive**
 - [ ] **Testing**
