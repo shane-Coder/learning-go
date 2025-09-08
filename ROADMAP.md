@@ -39,5 +39,5 @@ This phase will cover Go's most famous and powerful features.
     - [x] **Goroutines**
     - [x] **Channels**
     - [x] **Mutex**
-- [ ] **Standard Library Deep Dive**
+- [x] **Standard Library Deep Dive**
 - [ ] **Testing**
