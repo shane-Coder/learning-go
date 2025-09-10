@@ -40,4 +40,4 @@ This phase will cover Go's most famous and powerful features.
     - [x] **Channels**
     - [x] **Mutex**
 - [x] **Standard Library Deep Dive**
-- [ ] **Testing**
+- [x] **Testing**
