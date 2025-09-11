@@ -10,7 +10,7 @@ func main() {
 	fmt.Println("--- Attempting to read data.txt ---")
 
 	// 1. Open the file.
-	file, err := os.Open("data.txt")
+	file, err := os.Open("lessons/22_file_io_reading/data.txt")
 	// 2. Immediately check for an error.
 	if err != nil {
 		fmt.Printf("Error opening file: %v\n", err)

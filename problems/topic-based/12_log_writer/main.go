@@ -47,7 +47,7 @@ import (
 
 func logMessage(message string) error {
 	// Open the file in append mode, create it if it doesn't exist, and set write-only permissions
-	file, err := os.OpenFile("log.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	file, err := os.OpenFile("problems/topic-based/12_log_writer/log.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		return err
 	}
