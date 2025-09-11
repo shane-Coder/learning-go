@@ -1,0 +1,4 @@
+INFO:User logged in
+ERROR:Database connection failed
+DEBUG:Request received for /api/users
+INFO:Processing payment
