@@ -1,0 +1,5 @@
+INFO: User logged in successfully.
+WARNING: Disk space is running low.
+ERROR: Database connection failed.
+This is a malformed line.
+INFO: User logged out.
