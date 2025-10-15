@@ -9,7 +9,7 @@ The first roadmap was about learning the fundamentals of the Go language. This s
 This phase is about building a safety net for our code. In the professional world, untested code is considered broken. Mastering testing enables confident refactoring and robust development.
 
 - [x] **Table-Driven Tests**: The standard for writing clean, maintainable tests.
-- [ ] **Testing HTTP Handlers**: Learn to test API endpoints programmatically without a live server (`net/http/httptest`).
+- [x] **Testing HTTP Handlers**: Learn to test API endpoints programmatically without a live server (`net/http/httptest`).
 - [ ] **Mocking Dependencies**: Learn how to test business logic that depends on external systems (like databases) in isolation.
 - [ ] **Benchmarking**: Learn to measure the speed of your code and compare the performance of different solutions.
 
